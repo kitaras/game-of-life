@@ -1,7 +1,7 @@
 #include "Game.h"
 #include "SDL_render.h"
 
-Game::Game() : mWindow(nullptr), mRenderer(nullptr), mTicksCount(0), mIsRunning(true) {
+Game::Game() : mWindow(nullptr), mRenderer(nullptr), mTicksCount(0), mIsRunning(true), mIsPaused(false) {
 
 }
 
@@ -68,6 +68,8 @@ void Game::ProcessInput() {
             case SDL_QUIT:
                 mIsRunning = false;
                 break;
+            case SDL_KEYDOWN:
+                if (event.key.keysym.sym == SDLK_SPACE) mIsPaused = !mIsPaused;
         }
     }
 }

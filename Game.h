@@ -10,6 +10,7 @@ private:
     SDL_Renderer* mRenderer;
     Uint32 mTicksCount;
     bool mIsRunning;
+    bool mIsPaused;
 
     void ProcessInput();
     void UpdateGame();
