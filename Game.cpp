@@ -68,6 +68,8 @@ void Game::ProcessInput() {
             case SDL_QUIT:
                 mIsRunning = false;
                 break;
+            case SDL_KEYDOWN:
+                if (event.key.keysym.sym == SDLK_SPACE) mIsPaused = !mIsPaused;
         }
     }
 }
